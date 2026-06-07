@@ -1,0 +1,59 @@
+[project]
+name = "dataset"
+version = "0.1.0"
+description = "Public dataset for the Dataseka (dataseka.com) platform"
+readme = "README.md"
+requires-python = ">=3.13"
+
+dependencies = [
+    "fastexcel==0.20.2",
+    "httpx[http2]==0.28.1",
+    "marimo[recommended]==0.23.9",
+    "plotly[express]==6.8.0",
+    "polars==1.41.2",
+    "pydantic==2.13.4",
+]
+
+
+[dependency-groups]
+dev = [
+    "ruff==0.15.16",
+]
+
+[tool.marimo.runtime]
+pythonpath = ["."]
+
+[tool.uv]
+exclude-newer = "1 days"
+
+[tool.mypy]
+strict = true
+exclude = ["venv", ".venv", "alembic"]
+
+[tool.ruff]
+target-version = "py313"
+exclude = ["alembic"]
+
+[tool.ruff.lint]
+select = [
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "I", # isort
+    "B", # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+    "ARG001", # unused arguments in functions
+    "T201", # print statements are not allowed
+]
+ignore = [
+    "E501", # line too long, handled by black
+    "B008", # do not perform function calls in argument defaults
+    "W191", # indentation contains tabs
+    "B904", # Allow raising exceptions without from e, for HTTPException
+]
+
+[tool.ruff.lint.pyupgrade]
+# Preserve types, even if a file imports `from __future__ import annotations`.
+keep-runtime-typing = true
+

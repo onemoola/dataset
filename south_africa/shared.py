@@ -1,0 +1,14 @@
+CPI_STANDARD_SCHEMA = [
+    "catalog_code",
+    "catalog_name",
+    "data_code",
+    "data_type",
+    "data_name",
+    "region",
+    "base_period",
+    "period",
+    "frequency",
+    "value",
+    "unit",
+    "quantity",
+]
