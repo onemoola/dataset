@@ -6,3 +6,10 @@ updates:
       interval: "weekly"
     cooldown:
       default-days: 1
+
+  - package-ecosystem: "actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 1
