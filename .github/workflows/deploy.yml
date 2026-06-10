@@ -31,7 +31,7 @@ jobs:
           echo "<!DOCTYPE html><html><head><title>Dataseka notebooks</title></head><body><h1>Dataseka notebooks</h1><ul>" > _site/index.html
           for file in south_africa/*.py; do
             filename=$(basename "$file")
-            if [ "$filename" = "shared.py" ]; then
+            if [ "$filename" = "shared.py" ] || [ "$filename" = "__init__.py" ]; then
               continue
             fi
             name="${filename%.*}"
