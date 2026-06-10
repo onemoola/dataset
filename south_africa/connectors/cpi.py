@@ -10,7 +10,6 @@ from south_africa.tools import utils
 from south_africa.tools.http_client import HttpClient
 
 DATA_FOLDER = pathlib.Path(__file__).parent.parent / "data"
-CPI_AVG_ALL_URBAN_FILE = f"{DATA_FOLDER}/cpi-avg-prices-all-urban"
 
 
 async def download(url: str):
