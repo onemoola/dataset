@@ -35,7 +35,7 @@ jobs:
               continue
             fi
             name="${filename%.*}"
-            uv run marimo export html-wasm "$file" -o "_site/${name}.html" --mode run
+            uv run marimo export html-wasm "$file" -o "_site/${name}.html"
             echo "<li><a href='${name}.html'>${name}</a></li>" >> _site/index.html
           done
           echo "</ul></body></html>" >> _site/index.html
