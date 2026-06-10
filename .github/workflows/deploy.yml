@@ -36,6 +36,8 @@ jobs:
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <title>Dataseka — Open data notebooks</title>
+          <link rel="icon" type="image/png" sizes="32x32" href="https://dataseka.com/favicon-32x32.png">
+          <link rel="icon" type="image/png" sizes="16x16" href="https://dataseka.com/favicon-16x16.png">
           <link rel="preconnect" href="https://fonts.googleapis.com">
           <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap">
           <style>
@@ -107,19 +109,22 @@ jobs:
             case "$name" in
               "gross_domestic_product")
                 desc="Quarterly GDP releases from StatsSA P0441, normalised to the Dataseka target format."
+                icon="💰"
                 ;;
               "inflation")
                 desc="Monthly CPI and inflation data tracking the cost of living across South Africa."
+                icon="📈"
                 ;;
               *)
                 desc="Data ingestion, transformation, and visual history tracking for this public indicator."
+                icon="📊"
                 ;;
             esac
           
             uv run marimo export html-wasm "$file" -o "_site/${name}" --mode run
             cat >> _site/index.html << CARDEOF
                 <a class="card" href="${name}/index.html">
-                  <div class="card-icon">&#9632;</div>
+                  <div class="card-icon">${icon}</div>
                   <p class="card-name">${title}</p>
                   <p class="card-desc">${desc}</p>
                   <div class="card-footer">
