@@ -27,6 +27,7 @@ jobs:
 
       - name: Export notebooks
         run: |
+          mkdir -p _site
           echo "<!DOCTYPE html><html><head><title>Dataseka notebooks</title></head><body><h1>Dataseka notebooks</h1><ul>" > _site/index.html
           for file in south_africa/*.py; do
             filename=$(basename "$file")
